@@ -1,8 +1,13 @@
 package com.company;
 import java.io.*;
+
 public class Kolmas {
 
-    public static void main(String[] args) throws IOException {
+    static double summa (double a1,double a2,double a3,double a4,double a5){
+        return ((a1/2.0)+a2+a3+a4+(a5/2.0))/4.0;
+    }
+
+    public static void main(String[] arg) throws IOException {
 
         BufferedReader lugeja = new BufferedReader(
                 new FileReader("kuup2ev.txt")
@@ -10,8 +15,6 @@ public class Kolmas {
 
         PrintWriter kirjutaja = new PrintWriter(new FileWriter("kuup2ev2.txt"));
 
-        int loendur = 0;
-        int[] summad = new int[5];
         String rida = lugeja.readLine();
         double summa = 0;
 
@@ -24,21 +27,24 @@ public class Kolmas {
             double a4 = Integer.parseInt(m[4]);
             double a5 = Integer.parseInt(m[5]);
 
-            summa = (a1/2.0)+a2+a3+a4+(a5/2.0);
-            kirjutaja.println("Kuupäev: "+m[0]+" Keskmine temp: "+summa);
+           /* summa = (a1/2.0)+a2+a3+a4+(a5/2.0); */
+            kirjutaja.println("Kuupäev: "+m[0]+" Keskmine temp: "+summa(a1,a2,a3,a4,a5));
             rida = lugeja.readLine();
-            loendur++;
+
         }
         lugeja.close();
         kirjutaja.close();
     }
 }
+
 /*
-Väljatrükk :
-Kuupäev: 01-02 Keskmine temp: 4.0
-Kuupäev: 02-02 Keskmine temp: 3.5
-Kuupäev: 03-02 Keskmine temp: 4.0
-Kuupäev: 04-02 Keskmine temp: 16.5
-Kuupäev: 05-02 Keskmine temp: 12.5
+Väljatrükk faili
+Kuupäev: 01-02 Keskmine temp: 0.8
+Kuupäev: 02-02 Keskmine temp: 0.7
+Kuupäev: 03-02 Keskmine temp: 0.8
+Kuupäev: 04-02 Keskmine temp: 3.3
+Kuupäev: 05-02 Keskmine temp: 2.1
+
+
 
 */

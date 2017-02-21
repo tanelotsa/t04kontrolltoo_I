@@ -6,6 +6,11 @@ import java.lang.*;
 
 public class Main {
 
+  static double keskmine(double esimene, double teine, double kolmas){
+    return ((esimene+kolmas)/2+teine)/2;
+  }
+
+
     public static void main(String[] args) throws IOException {
 
         System.out.println("Sisesta kolm arvu");
@@ -21,11 +26,9 @@ public class Main {
         System.out.print("Palun sisesta kolmas arv: ");
         double kolmas = scan.nextDouble();
 
-        double koguarv = 0;
+        /*double keskmine = ((esimene+kolmas)/2+teine)/2;*/
 
-        double keskmine = ((esimene+kolmas)/2+teine)/2;
-
-        System.out.println("Vastus: "+keskmine);
+        System.out.println("Vastus: "+keskmine(esimene,teine,kolmas));
 
     }
 }
